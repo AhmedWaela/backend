@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_colors",
+  "info": {
+    "displayName": "colors"
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "string",
+      "default": "Black",
+      "required": false
+    },
+    "images": {
+      "type": "enumeration",
+      "enum": [
+        "\"https://cdn.shopify.com/s/files/1/0293/9277/files/10-18-24_S7_14_FNMK144_Black_P_CZ_DJ_10-16-39_26592_BH.jpg?v=1729629330&width=800&height=1200&crop=center\"",
+        "\"https://cdn.shopify.com/s/files/1/0293/9277/files/10-18-24_S7_14_FNMK144_Black_P_CZ_DJ_10-16-22_26585_BH.jpg?v=1729629330&width=800&height=1200&crop=center\""
+      ]
+    }
+  }
+}

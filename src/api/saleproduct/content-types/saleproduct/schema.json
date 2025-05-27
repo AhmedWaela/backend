@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "saleproducts",
+  "info": {
+    "singularName": "saleproduct",
+    "pluralName": "saleproducts",
+    "displayName": "saleproduct",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "productName": {
+      "type": "string",
+      "required": true
+    },
+    "productDescription": {
+      "type": "string",
+      "required": true
+    },
+    "originalPrice": {
+      "type": "decimal",
+      "required": true
+    },
+    "discountedPrice": {
+      "type": "decimal",
+      "required": true
+    },
+    "discount": {
+      "type": "decimal",
+      "required": true
+    },
+    "numberOfReviews": {
+      "type": "integer",
+      "required": true
+    },
+    "rating": {
+      "type": "decimal",
+      "required": true
+    },
+    "shopName": {
+      "type": "string",
+      "required": true
+    },
+    "sizes": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
