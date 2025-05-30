@@ -31,11 +31,7 @@
       "type": "decimal",
       "required": true
     },
-    "numberOfReviews": {
-      "type": "integer",
-      "required": true
-    },
-    "rating": {
+    "numberOfStars": {
       "type": "decimal",
       "required": true
     },
@@ -46,6 +42,21 @@
     "sizes": {
       "type": "json",
       "required": true
+    },
+    "colors": {
+      "type": "json"
+    },
+    "shippingInfo": {
+      "type": "json"
+    },
+    "support": {
+      "type": "json"
+    },
+    "reviews": {
+      "type": "json"
+    },
+    "numberOfRatings": {
+      "type": "integer"
     }
   }
 }

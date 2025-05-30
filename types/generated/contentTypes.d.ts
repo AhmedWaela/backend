@@ -550,6 +550,7 @@ export interface ApiSaleproductSaleproduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    colors: Schema.Attribute.JSON;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -561,14 +562,17 @@ export interface ApiSaleproductSaleproduct extends Struct.CollectionTypeSchema {
       'api::saleproduct.saleproduct'
     > &
       Schema.Attribute.Private;
-    numberOfReviews: Schema.Attribute.Integer & Schema.Attribute.Required;
+    numberOfRatings: Schema.Attribute.Integer;
+    numberOfStars: Schema.Attribute.Decimal & Schema.Attribute.Required;
     originalPrice: Schema.Attribute.Decimal & Schema.Attribute.Required;
     productDescription: Schema.Attribute.String & Schema.Attribute.Required;
     productName: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    rating: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    reviews: Schema.Attribute.JSON;
+    shippingInfo: Schema.Attribute.JSON;
     shopName: Schema.Attribute.String & Schema.Attribute.Required;
     sizes: Schema.Attribute.JSON & Schema.Attribute.Required;
+    support: Schema.Attribute.JSON;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
