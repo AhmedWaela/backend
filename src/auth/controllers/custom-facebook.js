@@ -11,9 +11,9 @@ module.exports = {
     }
 
     try {
-      // جلب بيانات المستخدم من Facebook API
+      // طلب بيانات المستخدم من Facebook باستخدام access_token
       const fbResponse = await fetch(
-"https://excellent-blessing-93fa28bbd4.strapiapp.com/api/auth/facebook/callback"
+        'https://graph.facebook.com/me?fields=id,email,name&access_token=${access_token}'
       );
       const fbData = await fbResponse.json();
 
@@ -21,7 +21,7 @@ module.exports = {
         return ctx.unauthorized('Invalid Facebook token');
       }
 
-      // البحث عن المستخدم في قاعدة بيانات Strapi
+      // البحث عن المستخدم في قاعدة بيانات Strapi باستخدام البريد الإلكتروني
       const user = await strapi.query('plugin::users-permissions.user').findOne({
         where: { email: fbData.email },
       });
@@ -29,7 +29,7 @@ module.exports = {
       let finalUser = user;
 
       if (!user) {
-        // إنشاء مستخدم جديد إذا لم يكن موجودًا
+        // إنشاء مستخدم جديد إذا لم يكن موجوداً
         finalUser = await strapi.query('plugin::users-permissions.user').create({
           data: {
             username: fbData.name,
@@ -46,9 +46,10 @@ module.exports = {
         id: finalUser.id,
       });
 
-      // إرسال الـ JWT وبيانات المستخدم للعميل
+      // إعادة الـ JWT وبيانات المستخدم للعميل
       return { jwt, user: finalUser };
     } catch (err) {
+      console.error(err);
       return ctx.internalServerError('Something went wrong');
     }
   },
