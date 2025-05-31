@@ -10,6 +10,7 @@ module.exports = ({ env }) => ({
           callback: 'https://excellent-blessing-93fa28bbd4.strapiapp.com/api/auth/facebook/callback',
         },
         twitter: {
+          enabled: true,
           key: env('a09tYmNWa1hjM1JuclZHbDBvRTk6MTpjaQ'),
           secret: env('dRs33WfLBgN_oxqudZZm9ZFStisbMhgDBFjxvfR7DNwEinq4aq'),
           callback: env('https://excellent-blessing-93fa28bbd4.strapiapp.com/api/auth/twitter/callback'),
