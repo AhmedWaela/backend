@@ -5,7 +5,7 @@ module.exports = {
     {
       method: 'POST',
       path: '/auth/twitter-login',
-      handler: 'auth.twitterLogin',
+      handler: 'twitter-auth.twitterLogin',
       config: {
         auth: false,
         policies: [],
